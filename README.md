@@ -219,11 +219,25 @@ sudo cp mysql-connector-java-8.0.33/mysql-connector-java-8.0.33.jar /usr/local/h
 Edit `hive-site.xml`:
 
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <property>
         <name>javax.jdo.option.ConnectionURL</name>
         <value>jdbc:mysql://localhost:3306/metastore</value>
     </property>
+
+    <property>
+    <name>javax.jdo.option.ConnectionUserName</name>
+    <value>hiveuser</value>
+    <description>Username for the database connection.</description>
+    </property>
+
+    <property>
+    <name>javax.jdo.option.ConnectionPassword</name>
+    <value>hivepassword</value>
+    <description>Password for the database connection.</description>
+    </property>
+
 </configuration>
 ```
 
